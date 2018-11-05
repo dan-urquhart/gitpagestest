@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+ <meta charset="utf-8">
+ <title>{{page.title}}</title>
+ </head>
+ <body>
+<header>
+{% include header.html %}
+</header>
+<nav>
+  <ul>
+    {% assign sorted_pages = site.pages | sort:"order" %}
+ {% for node in sorted_pages %}
+ <li><a href="{{node.url}}">{{node.title}}</a></li>
+ {% endfor %}
+</ul>
+</nav>
+ {{content}}
+<footer>
+{% include footer.html %}
+</footer>
+ </body>
+</html>
